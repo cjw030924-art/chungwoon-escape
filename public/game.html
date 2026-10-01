@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청운대학교 탈출맵</title>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="game"></canvas>
+
+    <div id="floor"></div>
+    <a class="back" href="index.html">시작 화면</a>
+
+    <div id="lives" hidden aria-label="남은 목숨"></div>
+    <button id="notehint" type="button" aria-controls="note" aria-expanded="false">
+      <span class="key">Tab</span> 수첩 <span id="count"></span>
+    </button>
+    <aside id="note" aria-label="수첩" hidden>
+      <h2>수첩</h2>
+      <ul id="notelist"></ul>
+    </aside>
+
+    <div id="help">WASD / 방향키로 이동 · E 숨기 · Tab 수첩 · 반짝이는 문의 강의실에 문제가 있어요 · 복도 끝으로 가면 옆 구역</div>
+    <div id="prompt" role="status" hidden></div>
+    <div id="toast" role="status"></div>
+
+    <div id="gate" hidden role="dialog" aria-modal="true" aria-labelledby="gatet">
+      <div class="gbox">
+        <h2 id="gatet">정문 잠금장치</h2>
+        <p>모든 문제의 정답 번호를 더한 값을 입력하세요.</p>
+        <div id="gsolved"></div>
+        <div id="gdisp">_ _ _</div>
+        <div id="gpad"></div>
+        <div class="qhint">숫자 키 입력 · Enter 확인 · Esc 닫기</div>
+      </div>
+    </div>
+
+    <div id="win" hidden role="dialog" aria-labelledby="wint">
+      <div class="wbox">
+        <h2 id="wint">탈출 성공!</h2>
+        <p>철컥— 정문이 열리고 새벽 공기가 밀려든다.</p>
+        <dl><dt>걸린 시간</dt><dd id="wtime"></dd><dt>잡힌 횟수</dt><dd id="wdeaths"></dd><dt>난이도</dt><dd id="wmode"></dd></dl>
+        <a id="wback" href="index.html">시작 화면으로</a>
+      </div>
+    </div>
+
+    <div id="over" hidden role="alertdialog" aria-labelledby="overt">
+      <div class="obox">
+        <h2 id="overt">귀신에게 잡혔다…</h2>
+        <p>푼 문제는 그대로 남아 있어요.</p>
+        <button id="retry" type="button">다시 도전 (Enter)</button>
+      </div>
+    </div>
+
+    <div id="quiz" hidden role="dialog" aria-modal="true" aria-labelledby="qroom">
+      <div class="qbox">
+        <div id="qroom"></div>
+        <p id="qtext"></p>
+        <div id="qchoices"></div>
+        <div id="qfeed" role="status"></div>
+        <div class="qhint">숫자 키 1~4로 선택 · Esc로 나가기</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/questions.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

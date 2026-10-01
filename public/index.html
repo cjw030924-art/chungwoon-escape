@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청운대학교 - 컴퓨터공학과 학술제</title>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=DotGothic16&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/title.css">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="c" width="320" height="180"></canvas>
+    <div class="title">
+      <svg viewBox="0 0 520 160" aria-hidden="true"><ellipse cx="260" cy="80" rx="250" ry="66" fill="none" stroke="#e8194f" stroke-width="2.2" stroke-dasharray="560 400" stroke-linecap="round" style="filter:drop-shadow(0 0 4px #ff3d6e)"/></svg>
+      <h1><span>청운대학교</span><i class="drip d1"></i><i class="drip d2"></i><i class="drip d3"></i><i class="drip d4"></i><i class="drip d5"></i></h1>
+      <div class="sub"><b>†</b>컴퓨터공학과 학술제<b>†</b></div>
+    </div>
+    <nav id="menu" aria-label="메인 메뉴">
+      <button data-a="continue" hidden><i>▶</i>CONTINUE</button>
+      <button data-a="new"><i>▶</i>NEW GAME</button>
+      <button data-a="opt"><i>▶</i>OPTION</button>
+      <button data-a="exit"><i>▶</i>EXIT</button>
+    </nav>
+    <div id="mode" hidden role="dialog" aria-modal="true" aria-labelledby="modet">
+      <div class="mbox">
+        <h2 id="modet">난이도 선택</h2>
+        <div class="mopts">
+          <button type="button" data-m="easy"><b>EASY</b><span>복도가 은은하게 밝아서 주변이 잘 보여요</span></button>
+          <button type="button" data-m="hard"><b>HARD</b><span>손전등처럼 내 주변만 보여요. 귀신도 빛이 닿아야 보여요</span></button>
+          <button type="button" data-m="extreme"><b>EXTREME</b><span>장난 난이도. 귀신이 나보다 빠르고 절대 떠나지 않아요. 깨라고 만든 게 아니에요</span></button>
+        </div>
+        <div class="mhint">← → 선택 · Enter 결정 · Esc 취소</div>
+      </div>
+    </div>
+    <div id="help" hidden role="dialog" aria-modal="true" aria-labelledby="helpt">
+      <div class="hbox">
+        <h2 id="helpt">게임 설명</h2>
+        <div class="hgrid">
+          <section>
+            <h3>스토리</h3>
+            <p>학술제가 끝난 늦은 밤, 청운대학교 건물에 혼자 남았다. 정신을 차려 보니 정문은 굳게 잠겨 있고, 복도 어딘가에서 무언가가 돌아다니는 소리가 들린다. 정문을 열 수 있는 건 각 학과 강의실에 숨겨진 <em>문제의 정답 번호</em>뿐이다.</p>
+            <h3>목표</h3>
+            <p>3층~8층의 12개 학과 강의실(층마다 2개)을 찾아 문제를 풀고, 정답 번호 12개를 <em>모두 더한 값</em>을 1층 정문 키패드에 입력해 탈출하세요. 틀린 번호를 입력하면… 귀신이 기다리고 있어요.</p>
+            <h3>난이도 · 목숨</h3>
+            <ul>
+              <li><em>EASY</em> · 목숨 제한 없음</li>
+              <li><em>HARD</em> · 목숨 ♥ 5개</li>
+              <li><em>EXTREME</em> · 목숨 ♥ 3개</li>
+            </ul>
+            <p class="lifenote">귀신에게 잡히면 하트가 하나씩 사라지고, 모두 잃으면 시작 화면으로 돌아가요.</p>
+          </section>
+          <section>
+            <h3>조작키</h3>
+            <dl class="keys">
+              <dt>W A S D · 방향키</dt><dd>이동</dd>
+              <dt>E</dt><dd>캐비닛에 숨기 / 나오기</dd>
+              <dt>Tab</dt><dd>수첩 열기·닫기 (푼 문제 번호 기록)</dd>
+              <dt>1 2 3 4</dt><dd>문제 보기 선택</dd>
+              <dt>Esc</dt><dd>문제·키패드 닫기</dd>
+              <dt>Enter</dt><dd>키패드 확인 / 다시 도전</dd>
+            </dl>
+            <h3>생존 팁</h3>
+            <ul>
+              <li>반짝이는 문의 강의실에 문제가 있어요. 복도 끝으로 가면 옆 구역으로 이어져요.</li>
+              <li>귀신에게 쫓기면 복도 아래쪽 캐비닛에 숨으세요.</li>
+              <li>문제를 틀리면 10초간 잠기고, 귀신이 소리를 듣고 찾아와요.</li>
+              <li>2층은 문제가 없는 추격 구역이에요. 끝까지 달려서 통과하세요.</li>
+            </ul>
+          </section>
+        </div>
+        <div class="mhint">Esc 또는 Enter로 닫기</div>
+      </div>
+    </div>
+    <div id="msg" role="status"></div>
+  </div>
+  <script src="js/title.js"></script>
+</body>
+</html>
